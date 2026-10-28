@@ -1,0 +1,8 @@
+{
+  "Tetrodotoxin": "C(C1(C2C3C(N=C(NC34C(C1OC(C4O)(O2)O)O)N)O)O)O",
+  "Dieldrin": "C1C2C3C(C1C4C2O4)C5(C(=C(C3(C5(Cl)Cl)Cl)Cl)Cl)Cl",
+  "Digoxin": "CC1C(C(CC(O1)OC2C(OC(CC2O)OC3C(OC(CC3O)OC4CCC5(C(C4)CCC6C5CC(C7(C6(CCC7C8=CC(=O)OC8)O)C)O)C)C)C)O)O",
+  "Amygdalin": "C1=CC=C(C=C1)C(C#N)OC2C(C(C(C(O2)COC3C(C(C(C(O3)CO)O)O)O)O)O)O",
+  "MBOCA": "C1=CC(=C(C=C1CC2=CC(=C(C=C2)N)Cl)Cl)N",
+  "Selenium": "[Se]"
+}

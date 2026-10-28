@@ -1,0 +1,226 @@
+{
+  "Cyanide": {
+    "cas": "PubChem-Fetched",
+    "formula": "CN-",
+    "mw": 26.017,
+    "type": "Cyanide",
+    "structure": "[C-]#N",
+    "mechanism": "PubChem CID 5975. IUPAC: cyanide",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 5975,
+    "source": "PubChem"
+  },
+  "Monocrotaline": {
+    "cas": "PubChem-Fetched",
+    "formula": "C16H23NO6",
+    "mw": 325.36,
+    "type": "Alkaloid",
+    "structure": "CC1C(=O)OC2CCN3C2C(=CC3)COC(=O)C(C1(C)O)(C)O",
+    "mechanism": "PubChem CID 9415. IUPAC: (1R,4R,5R,6R,16R)-5,6-dihydroxy-4,5,6-trimethyl-2,8-dioxa-13-azatricyclo[8.5.1.013,16]hexadec-10-ene-3,7-dione",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 9415,
+    "source": "PubChem"
+  },
+  "Vx": {
+    "cas": "PubChem-Fetched",
+    "formula": "C11H26NO2PS",
+    "mw": 267.37,
+    "type": "Organophosphate",
+    "structure": "CCOP(=O)(C)SCCN(C(C)C)C(C)C",
+    "mechanism": "PubChem CID 39793. IUPAC: N-[2-[ethoxy(methyl)phosphoryl]sulfanylethyl]-N-propan-2-ylpropan-2-amine",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 39793,
+    "source": "PubChem"
+  },
+  "Diazinon": {
+    "cas": "PubChem-Fetched",
+    "formula": "C12H21N2O3PS",
+    "mw": 304.35,
+    "type": "Organophosphate",
+    "structure": "CCOP(=S)(OCC)OC1=NC(=NC(=C1)C)C(C)C",
+    "mechanism": "PubChem CID 3017. IUPAC: diethoxy-(6-methyl-2-propan-2-ylpyrimidin-4-yl)oxy-sulfanylidene-lambda5-phosphane",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 3017,
+    "source": "PubChem"
+  },
+  "Methanol": {
+    "cas": "PubChem-Fetched",
+    "formula": "CH4O",
+    "mw": 32.042,
+    "type": "Industrial solvent",
+    "structure": "CO",
+    "mechanism": "PubChem CID 887. IUPAC: methanol",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 887,
+    "source": "PubChem"
+  },
+  "Arsenic Trioxide": {
+    "cas": "1327-53-3",
+    "formula": "As2O3",
+    "mw": 197.841,
+    "type": "Heavy metal / inorganic toxin",
+    "structure": "[O-2].[O-2].[O-2].[As+3].[As+3]",
+    "mechanism": "The mechanism of action of Arsenic Trioxide is not completely understood. Arsenic trioxide causes morphological changes and DNA fragmentation characteristic of apoptosis in NB4 human promyelocytic leukemia cells <i>in vitro</i>. Arsenic trioxide also causes damage or degradation of the fusion protein PML/RAR-alpha. It is suspected that arsenic trioxide induces cancer cells to undergo apoptosis.",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 14888,
+    "source": "PubChem"
+  },
+  "Potassium Cyanide": {
+    "cas": "151-50-8",
+    "formula": "CKN",
+    "mw": 65.116,
+    "type": "Cyanide",
+    "structure": "[C-]#N.[K+]",
+    "mechanism": "CYANIDE HAS A VERY HIGH AFFINITY FOR IRON IN FERRIC STATE. WHEN ABSORBED IT REACTS READILY WITH ... IRON OF CYTOCHROME OXIDASE IN MITOCHONDRIA; CELLULAR RESPIRATION IS THUS INHIBITED & CYTOTOXIC HYPOXIA RESULTS. SINCE UTILIZATION OF OXYGEN IS BLOCKED, VENOUS BLOOD IS OXYGENATED AND IS ALMOST AS BRIGHT RED AS ARTERIAL BLOOD. RESPIRATION IS STIMULATED BECAUSE CHEMORECEPTIVE CELLS RESPOND AS THEY DO TO DECREASED OXYGEN. A TRANSIENT STAGE OF CNS STIMULATION WITH HYPERPNEA AND HEADACHE IS OBSERVED; FINALLY THERE ARE HYPOXIC CONVULSIONS AND DEATH DUE TO RESPIRATORY ARREST. /CYANIDE/",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 9032,
+    "source": "PubChem"
+  },
+  "Sodium Azide": {
+    "cas": "26628-22-8",
+    "formula": "N3Na",
+    "mw": 65.01,
+    "type": "Chemical (sodium azide)",
+    "structure": "[N-]=[N+]=[N-].[Na+]",
+    "mechanism": "Sodium azide /is/ an inhibitor of mitochondrial ATPase. ...",
+    "targets": [
+      "See PubChem record"
+    ],
+    "organs": {
+      "liver": 0.5,
+      "kidney": 0.5,
+      "cns": 0.5
+    },
+    "half_life_hr": 4.0,
+    "vd_l_kg": 1.0,
+    "clearance_ml_min": 50.0,
+    "bioavailability": 0.8,
+    "ld50_mg_kg": 50.0,
+    "tox_threshold_mg_L": 10.0,
+    "cyp_substrate": [
+      "CYP3A4"
+    ],
+    "cyp_inhibitor": [],
+    "cid": 33557,
+    "source": "PubChem"
+  }
+}
