@@ -1,0 +1,2 @@
+# Tools for repository checks and tests; does not install application runtime libraries.
+pytest>=8,<9
