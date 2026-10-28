@@ -27,18 +27,20 @@ Toxsim is being organised as a transparent, reviewable codebase for learning abo
 
 ## Project status
 
-**This GitHub repository is currently a setup and documentation scaffold, not a runnable release.** The desktop application modules and associated data files from the developer's archive have not yet been committed here. Installing dependencies alone will not launch the application.
+**This GitHub repository is a tested documentation and repository-maintenance scaffold, not a runnable release of the original desktop application.** The desktop UI, complete application modules, and full database module from the supplied archive are not integrated here. Installing dependencies alone will not launch the original app.
 
 | Area | Current status |
 | --- | --- |
-| Documentation and project guidance | Available |
-| Python packaging metadata | Present; not yet evidence of a working app |
-| Continuous integration workflow | Configured; checks are still being established |
-| Desktop interface and application entry point | Not yet included in this repository |
-| Source data and repair mappings | Not yet included in this repository |
-| Functional and scientific validation | Not complete |
+| Project documentation, contribution guidance, and release checklist | Available |
+| Python packaging metadata | Present; does not mean the desktop app is packaged |
+| Continuous integration | Python 3.11 and 3.12 repository checks pass on the latest verified main commit |
+| JSON cache and SMILES repair mapping | Present; syntax/basic-shape checks do not verify chemical identity or scientific accuracy |
+| Desktop interface and application entry point | Not integrated |
+| Full database and original simulation engine | Not integrated as a runnable application |
+| Functional, toxicological, and scientific validation | Not complete |
+| Release licence and asset-rights review | Owner decision and review still required |
 
-See [implementation status](docs/implementation-status.md) for known model limitations and the next review milestones.
+The supplied archive was audited, but the original dose-to-lethality simulation was not wired into the public repository. This keeps the current repository status explicit rather than presenting a successful scaffolding test as proof that the desktop product works. See the [final handoff and release gates](docs/release-handoff.md) and [implementation status](docs/implementation-status.md).
 
 ## What the project covers
 
@@ -69,6 +71,7 @@ See [implementation status](docs/implementation-status.md) for known model limit
 | [Installation guide](docs/installation.md) | Environment setup and current launch limitations |
 | [Development guide](docs/development.md) | Local quality checks and contributor workflow |
 | [Implementation status](docs/implementation-status.md) | Known code-review concerns and milestones |
+| [Final handoff and release gates](docs/release-handoff.md) | What's complete, what's not, and what remains before a real release |
 | [Glossary](docs/glossary.md) | Key terms used throughout the project |
 | [References](docs/references.md) | Further reading and source material |
 | [Contribution guide](CONTRIBUTING.md) | How to make useful, reviewable contributions |
@@ -117,8 +120,16 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
+Run the repository checks:
+
+```bash
+python scripts/check_repository.py
+python scripts/check_data_files.py
+python -m pytest -q
+```
+
 > [!NOTE]
-> These steps prepare a Python environment only. There is no confirmed application launch command for this repository yet because the runnable desktop source and its required data files are not included in the current checkout. See the [installation and troubleshooting guide](docs/installation.md).
+> The commands above prepare the environment and validate the repository scaffold; they do not launch the original desktop application. There is no confirmed app launch command for this checkout because its complete UI and application modules are not integrated. See the [installation and troubleshooting guide](docs/installation.md).
 
 ## Scientific integrity
 
