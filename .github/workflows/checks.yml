@@ -6,10 +6,15 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  checks:
+  repository-quality:
+    name: Repository quality (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
     steps:
@@ -19,12 +24,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install baseline dependencies
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - name: Install development checks
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
-          python -m pip install -e .[dev]
+          python -m pip install -r requirements-dev.txt
       - name: Check Python syntax
-        run: python -m compileall -q src
+        run: python -m compileall -q scripts tests
+      - name: Validate local documentation links
+        run: python scripts/check_repository.py
       - name: Run tests
-        run: python -m pytest
+        run: python -m pytest -q
