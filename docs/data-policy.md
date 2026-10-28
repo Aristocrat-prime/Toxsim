@@ -1,7 +1,3 @@
-# Data policy and JSON files
-
-Toxsim is expected to use a PubChem-related JSON cache and a SMILES-repair JSON file. Those files have been mentioned by the developer but are not yet present in this repository. Their exact schema and contents therefore have not been inspected here.
-
 ## Requirements for every data file
 
 Each data source should document:
