@@ -9,6 +9,16 @@
 /out/
 /release/
 /debug/
+*.egg-info/
+
+# Python and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
 
 # Local development files
 .env
