@@ -1,0 +1,18 @@
+# Local application binaries
+*.exe
+*.dll
+*.pdb
+
+# Build and packaging output
+/build/
+/dist/
+/out/
+/release/
+/debug/
+
+# Local development files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
