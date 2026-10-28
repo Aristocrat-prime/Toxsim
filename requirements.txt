@@ -1,0 +1,14 @@
+# Baseline dependencies inferred from the supplied application description.
+# Reconcile this list against imports in the complete source before release.
+numpy>=1.26,<3
+scipy>=1.11,<2
+matplotlib>=3.8,<4
+Pillow>=10,<13
+requests>=2.31,<3
+
+# RDKit is required for molecular structure parsing/rendering.
+# If pip installation fails on your platform, follow docs/installation.md.
+rdkit>=2023.9.1
+
+# Development / test tooling
+pytest>=8,<9
