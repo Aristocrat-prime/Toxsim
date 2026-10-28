@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toxsim"
+version = "0.1.0"
+description = "Educational pharmacokinetics and toxicology research project"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { text = "License not yet selected" }
+authors = []
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.11,<2",
+  "matplotlib>=3.8,<4",
+  "Pillow>=10,<13",
+  "requests>=2.31,<3",
+  "rdkit>=2023.9.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.setuptools.packages.find]
+where = ["src"]
