@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="440" viewBox="0 0 1600 440" role="img" aria-labelledby="title desc">
+  <title id="title">Toxsim — transparent pharmacokinetics research</title>
+  <desc id="desc">A dark navy scientific banner with a molecular lattice, a concentration-time curve, and the Toxsim wordmark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#10243a"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#8ba5bd" stroke-opacity=".10" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="440" rx="22" fill="url(#bg)"/>
+  <rect width="1600" height="440" rx="22" fill="url(#grid)"/>
+  <path d="M0 370C250 330 410 405 650 360S1080 290 1600 340" fill="none" stroke="#203b55" stroke-width="2"/>
+  <path d="M0 392C250 352 410 427 650 382S1080 312 1600 362" fill="none" stroke="#203b55" stroke-width="1"/>
+  <g opacity=".85" stroke="#5e829c" stroke-width="2" fill="none">
+    <path d="M1110 92L1190 138L1270 92L1350 138L1430 92"/>
+    <path d="M1190 138L1190 230L1270 276L1350 230L1350 138"/>
+    <path d="M1270 92L1270 184L1350 230L1430 184L1430 92"/>
+    <path d="M1350 230L1430 276L1510 230"/>
+    <path d="M1110 92L1110 184L1190 230L1270 184"/>
+  </g>
+  <g fill="#0d2033" stroke="#2dd4bf" stroke-width="3">
+    <circle cx="1110" cy="92" r="9"/><circle cx="1190" cy="138" r="9"/><circle cx="1270" cy="92" r="9"/>
+    <circle cx="1350" cy="138" r="9"/><circle cx="1430" cy="92" r="9"/><circle cx="1190" cy="230" r="9"/>
+    <circle cx="1270" cy="184" r="9"/><circle cx="1350" cy="230" r="9"/><circle cx="1430" cy="184" r="9"/>
+    <circle cx="1430" cy="276" r="9"/><circle cx="1510" cy="230" r="9"/>
+  </g>
+  <g opacity=".8" stroke="#5c7892" stroke-width="1.5" fill="none">
+    <path d="M980 300H1510M980 300V70"/>
+    <path d="M980 240H1510M980 180H1510M980 120H1510" stroke-dasharray="4 8" opacity=".55"/>
+  </g>
+  <path d="M1000 286C1040 284 1058 256 1084 185S1135 100 1175 147S1240 228 1290 240S1380 257 1500 260" fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="1175" cy="147" r="6" fill="#2dd4bf"/>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="100" y="118" font-size="17" font-weight="700" letter-spacing="5" fill="#5eead4">RESEARCH · MODEL TRANSPARENCY</text>
+    <text x="94" y="218" font-size="88" font-weight="800" letter-spacing="-3" fill="#f1f5f9">TOX<tspan fill="#5eead4">SIM</tspan></text>
+    <rect x="100" y="246" width="74" height="4" rx="2" fill="#5eead4"/>
+    <text x="100" y="292" font-size="25" font-weight="500" fill="#c4d3e1">Pharmacokinetics. Molecular data.</text>
+    <text x="100" y="328" font-size="25" font-weight="500" fill="#c4d3e1">Assumptions made visible.</text>
+    <text x="100" y="386" font-size="14" letter-spacing="2.5" fill="#7f9bb3">EDUCATIONAL RESEARCH PROJECT</text>
+  </g>
+</svg>
