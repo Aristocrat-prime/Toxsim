@@ -1,62 +1,88 @@
-# Toxsim
+<p align="center">
+  <img src="assets/toxsim-banner.svg" alt="Toxsim — pharmacokinetics, molecular data, and model transparency" width="100%">
+</p>
 
-Toxsim is an educational research project for exploring pharmacokinetics (PK), molecular information, and the limits of simplified toxicology models. The repository is being organised so that its code, datasets, scientific assumptions, tests, and user documentation can be reviewed separately.
+<p align="center">
+  <a href="https://github.com/Aristocrat-prime/Toxsim/actions/workflows/checks.yml"><img alt="Python checks" src="https://github.com/Aristocrat-prime/Toxsim/actions/workflows/checks.yml/badge.svg"></a>
+  <img alt="Python 3.11–3.12" src="https://img.shields.io/badge/python-3.11%20%7C%203.12-3776AB?logo=python&logoColor=white">
+  <img alt="Project status: scaffold" src="https://img.shields.io/badge/status-project%20scaffold-64748b">
+  <img alt="Research and education" src="https://img.shields.io/badge/focus-research%20%26%20education-0f766e">
+</p>
 
-> **Research and safety notice:** Toxsim is not a medical device or clinical decision-support system. Do not use it to choose doses, plan poisoning, select or combine toxic substances, interpret a real exposure, or make treatment decisions. Model outputs must not be treated as validated predictions of injury or death. For a suspected exposure, contact local emergency services or a poison information service immediately.
+<h1 align="center">Toxsim</h1>
 
-## Current status
+<p align="center">
+  <strong>Explore the model. Inspect the assumptions. Keep the evidence visible.</strong><br>
+  An educational research project for pharmacokinetics, molecular information, and responsible model analysis.
+</p>
 
-The repository currently contains background documentation and a project scaffold. Source code for the desktop interface and engine, plus the PubChem cache and SMILES repair data mentioned by the developer, still need to be added and reviewed before the project can be installed or run from this repository.
+---
 
-The supplied engine snippet includes unvalidated assumptions and a so-called lethality score. That score is a model-specific number, not a validated probability of death or a clinical endpoint. The snippet also derives inhibition constants from a toxicity threshold and uses rough default parameters for missing data. Those are substantial scientific limitations. Any implementation intended for education should make assumptions visible and avoid presenting unvalidated injury or lethality outputs as reliable predictions.
+## About the project
 
-## Project goals
+Toxsim is being organised as a transparent, reviewable codebase for learning about pharmacokinetic concepts, molecular data, scientific assumptions, and the limits of simplified models. The project emphasises traceable data, explicit units, reproducible checks, and honest communication of uncertainty.
 
-- Explain PK concepts such as absorption, distribution, metabolism, and excretion (ADME).
-- Keep source code, data files, citations, and documentation organised.
-- Record data provenance, units, assumptions, and uncertainty.
-- Add reproducible tests for data loading, input validation, numerical behaviour, and user-interface components.
-- Make it clear which outputs are illustrative and which, if any, have been independently validated.
+> [!IMPORTANT]
+> **Research and safety notice:** Toxsim is not a medical device or clinical decision-support system. Do not use it to choose doses, plan poisoning, select or combine toxic substances, interpret a real exposure, or make treatment decisions. Model outputs are not validated predictions of injury or death. For a suspected exposure, contact local emergency services or a poison information service immediately.
 
-## Repository map
+## Project status
 
-```text
-Toxsim/
-├── README.md
-├── requirements.txt
-├── pyproject.toml
-├── .gitignore
-├── CONTRIBUTING.md
-├── docs/
-│   ├── installation.md
-│   ├── pharmacokinetics.md
-│   ├── model-scope.md
-│   ├── data-policy.md
-│   ├── glossary.md
-│   ├── references.md
-│   └── implementation-status.md
-├── data/
-│   └── README.md
-├── src/
-│   └── toxsim/                 # planned application package
-├── tests/
-│   └── README.md
-└── .github/
-    └── workflows/
-        └── checks.yml
-```
+**This GitHub repository is currently a setup and documentation scaffold, not a runnable release.** The desktop application modules and associated data files from the developer's archive have not yet been committed here. Installing dependencies alone will not launch the application.
 
-The `src/` package and automated tests are planned locations; they are not complete merely because the folders appear in this diagram.
+| Area | Current status |
+| --- | --- |
+| Documentation and project guidance | Available |
+| Python packaging metadata | Present; not yet evidence of a working app |
+| Continuous integration workflow | Configured; checks are still being established |
+| Desktop interface and application entry point | Not yet included in this repository |
+| Source data and repair mappings | Not yet included in this repository |
+| Functional and scientific validation | Not complete |
 
-## Requirements
+See [implementation status](docs/implementation-status.md) for known model limitations and the next review milestones.
 
-- Windows 10/11, macOS, or a current Linux distribution.
-- Python 3.11 or 3.12 recommended.
-- Git, if you intend to clone the repository.
-- The Python libraries listed in [requirements.txt](requirements.txt).
-- RDKit is needed only for molecular structure features. Installation can vary by operating system; see [the installation guide](docs/installation.md).
+## What the project covers
 
-## Quick start
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <strong>01 · PK concepts</strong><br>
+      Learn the language of absorption, distribution, metabolism, excretion, and concentration over time.
+    </td>
+    <td width="33%" valign="top">
+      <strong>02 · Molecular data</strong><br>
+      Treat chemical identifiers and structure strings as data that need provenance and validation.
+    </td>
+    <td width="33%" valign="top">
+      <strong>03 · Model transparency</strong><br>
+      Make assumptions, units, uncertainty, and validation gaps visible to readers and reviewers.
+    </td>
+  </tr>
+</table>
+
+## Documentation
+
+| Guide | What you'll find |
+| --- | --- |
+| [Pharmacokinetics overview](docs/pharmacokinetics.md) | Core ADME concepts and concentration-time terminology |
+| [Model scope and limitations](docs/model-scope.md) | Intended use, assumptions, uncertainty, and interpretation cautions |
+| [Data policy](docs/data-policy.md) | Provenance, JSON records, identifiers, and SMILES repair records |
+| [Installation guide](docs/installation.md) | Environment setup and current launch limitations |
+| [Implementation status](docs/implementation-status.md) | Known code-review concerns and milestones |
+| [Glossary](docs/glossary.md) | Key terms used throughout the project |
+| [References](docs/references.md) | Further reading and source material |
+| [Contribution guide](CONTRIBUTING.md) | How to make useful, reviewable contributions |
+| [Tests](tests/README.md) | Current automated-check scope and future test coverage |
+
+## Getting started
+
+### Requirements
+
+- Python 3.11 or 3.12
+- Git, if you plan to clone the repository
+- The dependencies listed in `requirements.txt`
+- RDKit for molecular-structure features; installation differs by platform
+
+### Create a local environment
 
 Clone the repository and create a virtual environment:
 
@@ -73,7 +99,12 @@ Activate it:
 .\.venv\Scripts\Activate.ps1
 ```
 
-**macOS/Linux**
+**Windows Command Prompt**
+```bat
+.venv\Scripts\activate.bat
+```
+
+**macOS / Linux**
 ```bash
 source .venv/bin/activate
 ```
@@ -85,25 +116,20 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-This installs the documented baseline libraries only. It does **not** make the application runnable until the actual application modules and required data files have been added. See [Installation](docs/installation.md).
+> [!NOTE]
+> These steps prepare a Python environment only. There is no confirmed application launch command for this repository yet because the runnable desktop source and its required data files are not included in the current checkout. See the [installation and troubleshooting guide](docs/installation.md).
 
-## Data and scientific integrity
+## Scientific integrity
 
-Do not treat missing values as measured facts. Each compound record should preserve its source, retrieval date, units, and whether a value is measured, estimated, assumed, or unavailable. PubChem identifiers and SMILES strings describe chemical records; they do not establish human pharmacokinetic parameters, toxicity thresholds, mixture compatibility, or clinical outcomes.
+- **Keep provenance attached.** Record where a value came from, when it was retrieved, its units, and whether it is measured, estimated, assumed, synthetic, or missing.
+- **Do not disguise uncertainty.** A plausible-looking default is not a substitute for evidence.
+- **Separate structure from outcome.** A compound identifier or SMILES string does not establish human pharmacokinetics, mixture compatibility, toxicity, or clinical outcome.
+- **Validate before making claims.** Software tests check that code behaves as specified; they do not establish that a model predicts real-world biology accurately.
 
-See [Data policy](docs/data-policy.md) and [Implementation status](docs/implementation-status.md).
+## Contributing
 
-## Documentation
-
-- [Pharmacokinetics overview](docs/pharmacokinetics.md)
-- [Model scope and limitations](docs/model-scope.md)
-- [Data provenance and JSON files](docs/data-policy.md)
-- [Installation and troubleshooting](docs/installation.md)
-- [Implementation status and remaining work](docs/implementation-status.md)
-- [Glossary](docs/glossary.md)
-- [References](docs/references.md)
-- [Contribution guide](CONTRIBUTING.md)
+Contributions that improve documentation, data provenance, reproducibility, accessibility, or scientific clarity are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and make sure new scientific claims are supported by appropriate sources.
 
 ## Disclaimer
 
-This project is provided for educational and research discussion only, without warranty of accuracy or fitness for a particular purpose. It does not provide medical advice. Any future model should be reviewed by qualified domain experts and validated against appropriate, documented reference data before its outputs are used beyond classroom illustration.
+This project is provided for educational and research discussion only, without warranty of accuracy or fitness for a particular purpose. It does not provide medical advice and must not be used to guide real-world exposure or treatment decisions.
