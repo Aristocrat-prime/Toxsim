@@ -1,48 +1,109 @@
 # Toxsim
 
-Toxsim is a research and learning project for exploring toxicology concepts, with a focus on how the body handles substances over time. This repository documents the project's scientific background, assumptions, limitations, and responsible use.
+Toxsim is an educational research project for exploring pharmacokinetics (PK), molecular information, and the limits of simplified toxicology models. The repository is being organised so that its code, datasets, scientific assumptions, tests, and user documentation can be reviewed separately.
 
-The goal is to make pharmacokinetics easier to understand: what happens to a substance after it enters the body, how it moves between tissues, how it is transformed, and how it is eventually eliminated. These processes are often summarized as ADME: absorption, distribution, metabolism, and excretion.
+> **Research and safety notice:** Toxsim is not a medical device or clinical decision-support system. Do not use it to choose doses, plan poisoning, select or combine toxic substances, interpret a real exposure, or make treatment decisions. Model outputs must not be treated as validated predictions of injury or death. For a suspected exposure, contact local emergency services or a poison information service immediately.
 
-## What this project is for
+## Current status
 
-Toxsim is intended for classroom discussion and independent study of pharmacokinetics and toxicology; explaining concepts such as bioavailability, volume of distribution, clearance, and elimination half-life; reviewing how assumptions in a model affect outputs; and supporting conversations among students, researchers, and qualified professionals about the limits of simplified simulations.
+The repository currently contains background documentation and a project scaffold. Source code for the desktop interface and engine, plus the PubChem cache and SMILES repair data mentioned by the developer, still need to be added and reviewed before the project can be installed or run from this repository.
 
-## What it is not for
+The supplied engine snippet includes unvalidated assumptions and a so-called lethality score. That score is a model-specific number, not a validated probability of death or a clinical endpoint. The snippet also derives inhibition constants from a toxicity threshold and uses rough default parameters for missing data. Those are substantial scientific limitations. Any implementation intended for education should make assumptions visible and avoid presenting unvalidated injury or lethality outputs as reliable predictions.
 
-This project is not a medical device, clinical decision-support system, or substitute for professional toxicology advice. It must not be used to determine a safe or lethal dose, plan poisoning, select or combine toxic substances, predict the outcome of an exposure in a real person, or guide treatment. It does not validate any real-world exposure scenario.
+## Project goals
 
-A research-only label does not make every use safe. For that reason, this repository focuses on general scientific education, model transparency, and safety documentation. It does not provide instructions for preparing harmful mixtures or operational guidance for causing toxic effects.
+- Explain PK concepts such as absorption, distribution, metabolism, and excretion (ADME).
+- Keep source code, data files, citations, and documentation organised.
+- Record data provenance, units, assumptions, and uncertainty.
+- Add reproducible tests for data loading, input validation, numerical behaviour, and user-interface components.
+- Make it clear which outputs are illustrative and which, if any, have been independently validated.
 
-If a real exposure may have occurred, contact local emergency services or a poison information service immediately. Do not wait for a simulation result.
+## Repository map
 
-## Pharmacokinetics at a glance
+```text
+Toxsim/
+├── README.md
+├── requirements.txt
+├── pyproject.toml
+├── .gitignore
+├── CONTRIBUTING.md
+├── docs/
+│   ├── installation.md
+│   ├── pharmacokinetics.md
+│   ├── model-scope.md
+│   ├── data-policy.md
+│   ├── glossary.md
+│   ├── references.md
+│   └── implementation-status.md
+├── data/
+│   └── README.md
+├── src/
+│   └── toxsim/                 # planned application package
+├── tests/
+│   └── README.md
+└── .github/
+    └── workflows/
+        └── checks.yml
+```
 
-Pharmacokinetics describes the time course of a substance in the body.
+The `src/` package and automated tests are planned locations; they are not complete merely because the folders appear in this diagram.
 
-- Absorption: movement from the site of exposure into systemic circulation.
-- Distribution: movement between blood and tissues.
-- Metabolism: chemical transformation, often involving enzymes in the liver and other tissues.
-- Excretion: removal from the body, commonly through the kidneys or bile.
+## Requirements
 
-These processes interact. Their importance varies with the substance, route of exposure, formulation, physiology, age, organ function, co-exposures, and many other factors. A simplified model cannot capture every relevant variable.
+- Windows 10/11, macOS, or a current Linux distribution.
+- Python 3.11 or 3.12 recommended.
+- Git, if you intend to clone the repository.
+- The Python libraries listed in [requirements.txt](requirements.txt).
+- RDKit is needed only for molecular structure features. Installation can vary by operating system; see [the installation guide](docs/installation.md).
 
-## Repository guide
+## Quick start
 
-- docs/pharmacokinetics.md — introductory overview of ADME and related concepts.
-- docs/model-scope.md — assumptions, limitations, and responsible interpretation.
-- docs/glossary.md — plain-language definitions of common terms.
-- docs/references.md — starting points for further reading.
-- CONTRIBUTING.md — expectations for contributions.
+Clone the repository and create a virtual environment:
 
-## Project status
+```bash
+git clone https://github.com/Aristocrat-prime/Toxsim.git
+cd Toxsim
+python -m venv .venv
+```
 
-The repository currently contains scientific background and documentation. The Windows executable supplied separately has not been included or reviewed as source code. Its internal implementation, calculations, data sources, and validation status therefore remain unverified. Do not assume that any output from an executable is scientifically reliable.
+Activate it:
 
-## Responsible use
+**Windows PowerShell**
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
 
-Use the material to learn, ask better research questions, and understand why toxicology is context-dependent. Do not use it to make real-world dosing or exposure decisions. Any future model implementation should document its data sources, units, assumptions, uncertainty, validation method, and intended audience before its results are interpreted.
+**macOS/Linux**
+```bash
+source .venv/bin/activate
+```
+
+Install the baseline dependencies:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+This installs the documented baseline libraries only. It does **not** make the application runnable until the actual application modules and required data files have been added. See [Installation](docs/installation.md).
+
+## Data and scientific integrity
+
+Do not treat missing values as measured facts. Each compound record should preserve its source, retrieval date, units, and whether a value is measured, estimated, assumed, or unavailable. PubChem identifiers and SMILES strings describe chemical records; they do not establish human pharmacokinetic parameters, toxicity thresholds, mixture compatibility, or clinical outcomes.
+
+See [Data policy](docs/data-policy.md) and [Implementation status](docs/implementation-status.md).
+
+## Documentation
+
+- [Pharmacokinetics overview](docs/pharmacokinetics.md)
+- [Model scope and limitations](docs/model-scope.md)
+- [Data provenance and JSON files](docs/data-policy.md)
+- [Installation and troubleshooting](docs/installation.md)
+- [Implementation status and remaining work](docs/implementation-status.md)
+- [Glossary](docs/glossary.md)
+- [References](docs/references.md)
+- [Contribution guide](CONTRIBUTING.md)
 
 ## Disclaimer
 
-This repository is provided for educational and research discussion only, without warranty of accuracy or fitness for a particular purpose. It does not provide medical advice. Users are responsible for complying with applicable laws, research ethics, and institutional safety requirements.
+This project is provided for educational and research discussion only, without warranty of accuracy or fitness for a particular purpose. It does not provide medical advice. Any future model should be reviewed by qualified domain experts and validated against appropriate, documented reference data before its outputs are used beyond classroom illustration.
