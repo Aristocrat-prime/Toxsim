@@ -1,15 +1,24 @@
 # Tests
 
-Automated tests will be added when the full application modules and data schemas are committed. There are no executable project tests in this scaffold yet.
+This repository currently includes automated tests for its documentation-integrity helper. Run them from the repository root:
 
-Recommended initial coverage:
+```bash
+python -m pip install -r requirements-dev.txt
+python scripts/check_repository.py
+python -m pytest -q
+```
 
-- JSON syntax and schema validation for the PubChem cache and SMILES repair mapping.
-- Required-field, type, unit, and range validation.
+The checks cover extracting local Markdown/HTML links, accepting valid local targets, detecting missing targets, and rejecting paths that escape the repository root.
+
+## Future test coverage
+
+When the complete application modules and data schemas are reviewed and included, additional tests may cover:
+
+- JSON syntax and schema validation using synthetic fixtures.
+- Required-field and type validation.
 - Handling of missing or malformed records.
-- Deterministic tests using clearly labelled synthetic values.
-- Numerical sanity checks for a simple, non-toxic educational one-compartment example.
-- Plot creation and UI smoke tests that do not require external API access.
-- Regression tests for any previously corrected defects.
+- Deterministic tests using clearly labelled synthetic examples.
+- Plot creation and interface smoke tests that do not require external network access.
+- Regression tests for confirmed defects.
 
-Tests must not use real toxic mixtures or harmful dose scenarios as their fixtures. Passing software tests demonstrates that code behaves as specified; it does not validate the model against real human outcomes.
+Tests must not use real toxic mixtures or harmful dose scenarios as fixtures. Passing software tests demonstrates that code behaves as specified; it does not validate a model against real human outcomes.

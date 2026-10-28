@@ -67,6 +67,7 @@ See [implementation status](docs/implementation-status.md) for known model limit
 | [Model scope and limitations](docs/model-scope.md) | Intended use, assumptions, uncertainty, and interpretation cautions |
 | [Data policy](docs/data-policy.md) | Provenance, JSON records, identifiers, and SMILES repair records |
 | [Installation guide](docs/installation.md) | Environment setup and current launch limitations |
+| [Development guide](docs/development.md) | Local quality checks and contributor workflow |
 | [Implementation status](docs/implementation-status.md) | Known code-review concerns and milestones |
 | [Glossary](docs/glossary.md) | Key terms used throughout the project |
 | [References](docs/references.md) | Further reading and source material |
