@@ -1,6 +1,6 @@
 import json
 
-from toxsim.desktop import audit_data
+from toxsim.data_audit import audit_data
 
 
 def test_audit_reports_aggregate_field_coverage(tmp_path):
@@ -13,9 +13,7 @@ def test_audit_reports_aggregate_field_coverage(tmp_path):
         }),
         encoding="utf-8",
     )
-
     result = audit_data(source)
-
     assert result["ok"] is True
     assert result["record_count"] == 3
     assert result["object_records"] == 2
