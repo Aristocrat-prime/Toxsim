@@ -1,6 +1,7 @@
 """Desktop data-review window for the tracked Toxsim JSON cache."""
 from __future__ import annotations
 
+import sys
 import tkinter as tk
 from pathlib import Path
 from tkinter import messagebox, ttk
@@ -8,7 +9,8 @@ from tkinter import messagebox, ttk
 from .data_audit import audit_data
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_DATA = ROOT / "pubchem_cache.json"
+BUNDLE_ROOT = Path(getattr(sys, "_MEIPASS", ROOT))
+DEFAULT_DATA = BUNDLE_ROOT / "pubchem_cache.json"
 
 
 class DataReviewApp:
