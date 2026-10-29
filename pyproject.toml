@@ -19,6 +19,9 @@ dependencies = [
   "rdkit>=2023.9.1",
 ]
 
+[project.scripts]
+toxsim-desktop = "toxsim.desktop:main"
+
 [project.optional-dependencies]
 dev = ["pytest>=8,<9"]
 
