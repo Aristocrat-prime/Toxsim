@@ -8,11 +8,11 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+set "PYTHONPATH=%CD%\src;%PYTHONPATH%"
 python -m toxsim
 if errorlevel 1 (
   echo.
-  echo Toxsim did not start. Confirm Python 3.11/3.12 is installed
-  echo and that the repository environment is configured.
+  echo Toxsim did not start. Confirm Python 3.11/3.12 and Tkinter are installed.
   pause
   exit /b 1
 )
