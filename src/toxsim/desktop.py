@@ -1,55 +1,14 @@
-"""Desktop data-quality console for the tracked Toxsim JSON cache.
-
-This module audits file readability and metadata coverage only. It deliberately
-does not execute simulation, mixture, dose, injury, or lethality calculations.
-"""
+"""Desktop data-review window for the tracked Toxsim JSON cache."""
 from __future__ import annotations
 
-import json
 import tkinter as tk
 from pathlib import Path
 from tkinter import messagebox, ttk
-from typing import Any
+
+from .data_audit import audit_data
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DATA = ROOT / "pubchem_cache.json"
-METADATA_FIELDS = ("formula", "mw", "type", "structure", "cid", "source")
-
-
-def audit_data(path: str | Path = DEFAULT_DATA) -> dict[str, Any]:
-    """Return aggregate file and metadata checks without exposing record values."""
-    source = Path(path)
-    try:
-        raw = source.read_text(encoding="utf-8")
-    except OSError as exc:
-        return {"ok": False, "path": str(source), "error": str(exc)}
-
-    try:
-        payload = json.loads(raw)
-    except json.JSONDecodeError as exc:
-        return {
-            "ok": False,
-            "path": str(source),
-            "error": f"Invalid JSON at line {exc.lineno}, column {exc.colno}.",
-        }
-
-    if not isinstance(payload, dict):
-        return {"ok": False, "path": str(source), "error": "Expected a JSON object containing records."}
-
-    records = [record for record in payload.values() if isinstance(record, dict)]
-    field_coverage = {
-        field: sum(1 for record in records if record.get(field) not in (None, "", [], {}))
-        for field in METADATA_FIELDS
-    }
-    return {
-        "ok": True,
-        "path": str(source),
-        "record_count": len(payload),
-        "object_records": len(records),
-        "malformed_records": len(payload) - len(records),
-        "field_coverage": field_coverage,
-        "bytes": len(raw.encode("utf-8")),
-    }
 
 
 class DataReviewApp:
@@ -86,7 +45,6 @@ class DataReviewApp:
             text="Local repository check · read-only · no simulation execution",
             style="Sub.TLabel",
         ).pack(anchor="w", pady=(5, 20))
-
         self.status = ttk.Label(outer, text="Ready to inspect the tracked JSON file.")
         self.status.pack(anchor="w", pady=(0, 12))
         self.metrics = ttk.Treeview(outer, columns=("metric", "value"), show="headings", height=8)
@@ -119,7 +77,6 @@ class DataReviewApp:
             self.metrics.insert("", "end", values=("File check", "Failed"))
             self.metrics.insert("", "end", values=("Details", result["error"]))
             return
-
         self.status.configure(text="DATA FILE READABLE · aggregate checks complete")
         rows = [
             ("JSON file", "Valid"),
